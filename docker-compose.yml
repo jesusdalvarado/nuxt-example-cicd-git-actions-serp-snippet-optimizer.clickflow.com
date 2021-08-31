@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  client:
+    command: npm run dev
+    image: node:12-alpine
+    environment:
+      HOST: 0.0.0.0
+      NODE_ENV: development
+      PORT: 8080
+    volumes:
+      - ./client:/app
+    ports:
+      - 7070:8080
+    working_dir: /app
